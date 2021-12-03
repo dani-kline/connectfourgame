@@ -11,8 +11,8 @@ let HEIGHT = 6;
 let currPlayer = 1; // active player: 1 or 2
 let board = []; // array of rows, each row is array of cells  (board[y][x])
 
-/** makeBoard: create in-JS board structure:
- *    board = array of rows, each row is array of cells  (board[y][x])
+/*   makeBoard: create in-JS board structure:
+     board = array of rows, each row is array of cells  (board[y][x])
  */
 
 function makeBoard() {
@@ -21,7 +21,7 @@ function makeBoard() {
  }
 }
 
-/** makeHtmlBoard: make HTML table and row of column tops. */
+// makeHtmlBoard: make HTML table and row of column tops. 
 
 function makeHtmlBoard() {
   const htmlBoard = document.getElementById('board');
@@ -49,7 +49,7 @@ function makeHtmlBoard() {
   }
 }
 
-/** findSpotForCol: given column x, return top empty y (null if filled) */
+// findSpotForCol: given column x, return top empty y (null if filled) 
 
 function findSpotForCol(x) {
   for (y = HEIGHT-1 ; y >= 0 ; y--) {
@@ -61,10 +61,9 @@ function findSpotForCol(x) {
   // return 0;
 }
 
-/** placeInTable: update DOM to place piece into HTML table of board */
+// placeInTable: update DOM to place piece into HTML table of board 
 
 function placeInTable (x, y) {
-  // TODO: make a div and insert into correct table cell
   const pieceInTable = document.createElement("div");
   // console.log(y,x);
   if (currPlayer == 1) {
@@ -80,10 +79,9 @@ function placeInTable (x, y) {
 }
 
 
-/** endGame: announce game end */
+// endGame: announce game end 
 
 function endGame(msg) {
-  // TODO: pop up alert message
   alert (msg);
 }
 
@@ -125,9 +123,9 @@ function handleClick(evt) {
 
 function checkForWin() {
   function _win(cells) {
-    // Check four cells to see if they're all color of current player
-    //  - cells: list of four (y, x) cells
-    //  - returns true if all are legal coordinates & all match currPlayer
+    /* Check four cells to see if they're all color of current player
+      - cells: list of four (y, x) cells
+      - returns true if all are legal coordinates & all match currPlayer */
 
     return cells.every(
       ([y, x]) =>
@@ -139,7 +137,10 @@ function checkForWin() {
     );
   }
 
-  /* Loops through the columns and cells in each column, and creates a variable for each way to win. Uses those variables in the _win function from above and if any of them are true, then it ends the game.*/
+  /* Loops through the columns and cells in each column, and creates a variable for each way to win. 
+  Uses those variables in the _win function from above and if any of them are true, 
+  then it ends the game.*/
+
   for (let y = 0; y < HEIGHT; y++) {
     for (let x = 0; x < WIDTH; x++) {
       let horiz = [[y, x], [y, x + 1], [y, x + 2], [y, x + 3]];
