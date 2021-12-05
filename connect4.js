@@ -114,7 +114,7 @@ function handleClick(evt) {
   // check for tie
   if (board.every(`${y}`, row.every(cell => cell))) {
     return endGame('Tie!');
-
+  // could check the top row instead, more efficient -- future code update
 }
 }
 
