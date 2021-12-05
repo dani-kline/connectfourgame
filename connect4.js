@@ -119,13 +119,13 @@ function handleClick(evt) {
 }
 
 
-/** checkForWin: check board cell-by-cell for "does a win start here?" */
+// checkForWin: check board cell-by-cell for "does a win start here?" //
 
 function checkForWin() {
   function _win(cells) {
-    /* Check four cells to see if they're all color of current player
-      - cells: list of four (y, x) cells
-      - returns true if all are legal coordinates & all match currPlayer */
+    /** Check four cells to see if they're all color of current player
+     * - cells: list of four (y, x) cells
+     * - returns true if all are legal coordinates & all match currPlayer **/
 
     return cells.every(
       ([y, x]) =>
@@ -137,9 +137,9 @@ function checkForWin() {
     );
   }
 
-  /* Loops through the columns and cells in each column, and creates a variable for each way to win. 
-  Uses those variables in the _win function from above and if any of them are true, 
-  then it ends the game.*/
+  /** Loops through the columns and cells in each column, and creates a variable for each way to win. 
+   * Uses those variables in the _win function from above and if any of them are true, 
+   * then it ends the game. **/
 
   for (let y = 0; y < HEIGHT; y++) {
     for (let x = 0; x < WIDTH; x++) {
