@@ -1,0 +1,18 @@
+#form-box {
+    border: 1px solid black;
+    background-color: pink;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-entry {
+    display: block-inline;
+    margin: 1%;
+}
+
+#submit-button {
+    background-color: #2473e9;
+    color: white;
+    border-radius: 10%;
+}
