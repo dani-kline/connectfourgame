@@ -5,6 +5,10 @@
  * board fills (tie)
  */
 
+//FAKE VULN FOR TESTING
+
+var token = 'SECRET_TOKEN_sdhfuhlgifmdk3458ure-sdfufi44645754';
+
 let WIDTH = 7;
 let HEIGHT = 6;
 
